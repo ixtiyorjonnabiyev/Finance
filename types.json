@@ -1,0 +1,689 @@
+{
+ "types": {
+  "shop": {
+   "name": {
+    "uz": "Do'kon",
+    "ru": "Магазин",
+    "en": "Shop"
+   },
+   "income": [
+    "retail_sales",
+    "wholesale_sales",
+    "online_sales",
+    "rent_income",
+    "interest",
+    "loan_in",
+    "other_income"
+   ],
+   "expense": [
+    "goods_purchase",
+    "salaries",
+    "rent",
+    "utilities",
+    "packaging",
+    "transport",
+    "marketing",
+    "taxes",
+    "equipment",
+    "maintenance",
+    "loan_out",
+    "bank_fees",
+    "owner_withdrawal",
+    "other_expense"
+   ]
+  },
+  "manufacturer": {
+   "name": {
+    "uz": "Ishlab chiqarish korxonasi",
+    "ru": "Производство",
+    "en": "Manufacturer"
+   },
+   "income": [
+    "sales_products",
+    "wholesale_sales",
+    "online_sales",
+    "by_products",
+    "contracts",
+    "grants",
+    "loan_in",
+    "investment",
+    "other_income"
+   ],
+   "expense": [
+    "raw_materials",
+    "packaging",
+    "salaries",
+    "social_tax",
+    "electricity",
+    "utilities",
+    "equipment",
+    "maintenance",
+    "transport",
+    "fuel",
+    "rent",
+    "marketing",
+    "taxes",
+    "licenses",
+    "insurance",
+    "loan_out",
+    "other_expense"
+   ]
+  },
+  "company": {
+   "name": {
+    "uz": "Xizmat kompaniyasi",
+    "ru": "Сервисная компания",
+    "en": "Service company"
+   },
+   "income": [
+    "service_fees",
+    "contracts",
+    "subscriptions",
+    "commission",
+    "investment",
+    "loan_in",
+    "interest",
+    "other_income"
+   ],
+   "expense": [
+    "salaries",
+    "social_tax",
+    "rent",
+    "office",
+    "software",
+    "marketing",
+    "training",
+    "transport",
+    "subcontractors",
+    "taxes",
+    "insurance",
+    "loan_out",
+    "bank_fees",
+    "other_expense"
+   ]
+  },
+  "restaurant": {
+   "name": {
+    "uz": "Restoran / kafe",
+    "ru": "Ресторан / кафе",
+    "en": "Restaurant / café"
+   },
+   "income": [
+    "food_sales",
+    "online_sales",
+    "rent_income",
+    "loan_in",
+    "other_income"
+   ],
+   "expense": [
+    "food_ingredients",
+    "salaries",
+    "rent",
+    "utilities",
+    "packaging",
+    "equipment",
+    "maintenance",
+    "marketing",
+    "taxes",
+    "licenses",
+    "loan_out",
+    "other_expense"
+   ]
+  },
+  "farm": {
+   "name": {
+    "uz": "Fermer xo'jaligi",
+    "ru": "Фермерское хозяйство",
+    "en": "Farm"
+   },
+   "income": [
+    "crop_sales",
+    "livestock_sales",
+    "by_products",
+    "grants",
+    "loan_in",
+    "other_income"
+   ],
+   "expense": [
+    "seeds_fertilizer",
+    "feed",
+    "salaries",
+    "fuel",
+    "equipment",
+    "maintenance",
+    "electricity",
+    "transport",
+    "rent",
+    "taxes",
+    "insurance",
+    "loan_out",
+    "other_expense"
+   ]
+  },
+  "education": {
+   "name": {
+    "uz": "Ta'lim muassasasi",
+    "ru": "Образовательное учреждение",
+    "en": "Education"
+   },
+   "income": [
+    "tuition",
+    "grants",
+    "donations",
+    "service_fees",
+    "rent_income",
+    "other_income"
+   ],
+   "expense": [
+    "salaries",
+    "teaching_materials",
+    "rent",
+    "utilities",
+    "software",
+    "training",
+    "marketing",
+    "taxes",
+    "equipment",
+    "other_expense"
+   ]
+  },
+  "construction": {
+   "name": {
+    "uz": "Qurilish",
+    "ru": "Строительство",
+    "en": "Construction"
+   },
+   "income": [
+    "contracts",
+    "service_fees",
+    "loan_in",
+    "investment",
+    "other_income"
+   ],
+   "expense": [
+    "materials_build",
+    "subcontractors",
+    "salaries",
+    "social_tax",
+    "equipment",
+    "fuel",
+    "transport",
+    "rent",
+    "licenses",
+    "insurance",
+    "taxes",
+    "loan_out",
+    "other_expense"
+   ]
+  },
+  "nonprofit": {
+   "name": {
+    "uz": "Notijorat tashkilot",
+    "ru": "Некоммерческая организация",
+    "en": "Non-profit"
+   },
+   "income": [
+    "donations",
+    "grants",
+    "service_fees",
+    "interest",
+    "other_income"
+   ],
+   "expense": [
+    "salaries",
+    "rent",
+    "office",
+    "marketing",
+    "training",
+    "transport",
+    "software",
+    "taxes",
+    "other_expense"
+   ]
+  },
+  "individual": {
+   "name": {
+    "uz": "Yakka tadbirkor",
+    "ru": "Индивидуальный предприниматель",
+    "en": "Sole proprietor"
+   },
+   "income": [
+    "service_fees",
+    "contracts",
+    "online_sales",
+    "commission",
+    "other_income"
+   ],
+   "expense": [
+    "software",
+    "marketing",
+    "transport",
+    "office",
+    "taxes",
+    "rent",
+    "owner_withdrawal",
+    "other_expense"
+   ]
+  },
+  "other": {
+   "name": {
+    "uz": "Boshqa",
+    "ru": "Другое",
+    "en": "Other"
+   },
+   "income": [
+    "sales_products",
+    "service_fees",
+    "investment",
+    "loan_in",
+    "other_income"
+   ],
+   "expense": [
+    "raw_materials",
+    "goods_purchase",
+    "salaries",
+    "rent",
+    "utilities",
+    "marketing",
+    "transport",
+    "taxes",
+    "loan_out",
+    "other_expense"
+   ]
+  }
+ },
+ "cats": {
+  "sales_products": {
+   "uz": "Mahsulot sotuvi",
+   "ru": "Продажа продукции",
+   "en": "Product sales",
+   "pnl_group": "revenue",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "retail_sales": {
+   "uz": "Chakana savdo",
+   "ru": "Розничные продажи",
+   "en": "Retail sales",
+   "pnl_group": "revenue",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "wholesale_sales": {
+   "uz": "Ulgurji savdo",
+   "ru": "Оптовые продажи",
+   "en": "Wholesale sales",
+   "pnl_group": "revenue",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "online_sales": {
+   "uz": "Onlayn sotuv",
+   "ru": "Онлайн-продажи",
+   "en": "Online sales",
+   "pnl_group": "revenue",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "service_fees": {
+   "uz": "Xizmat haqi",
+   "ru": "Плата за услуги",
+   "en": "Service fees",
+   "pnl_group": "revenue",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "contracts": {
+   "uz": "Shartnoma tushumlari",
+   "ru": "Поступления по контрактам",
+   "en": "Contract revenue",
+   "pnl_group": "revenue",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "subscriptions": {
+   "uz": "Obunalar",
+   "ru": "Подписки",
+   "en": "Subscriptions",
+   "pnl_group": "revenue",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "tuition": {
+   "uz": "O'qish to'lovlari",
+   "ru": "Оплата обучения",
+   "en": "Tuition fees",
+   "pnl_group": "revenue",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "food_sales": {
+   "uz": "Taom va ichimlik sotuvi",
+   "ru": "Продажа еды и напитков",
+   "en": "Food & drink sales",
+   "pnl_group": "revenue",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "crop_sales": {
+   "uz": "Hosil sotuvi",
+   "ru": "Продажа урожая",
+   "en": "Crop sales",
+   "pnl_group": "revenue",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "livestock_sales": {
+   "uz": "Chorva mahsuloti sotuvi",
+   "ru": "Продажа продукции животноводства",
+   "en": "Livestock sales",
+   "pnl_group": "revenue",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "by_products": {
+   "uz": "Qo'shimcha mahsulot sotuvi",
+   "ru": "Продажа побочной продукции",
+   "en": "By-product sales",
+   "pnl_group": "revenue",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "rent_income": {
+   "uz": "Ijara daromadi",
+   "ru": "Доход от аренды",
+   "en": "Rental income",
+   "pnl_group": "other_income",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "commission": {
+   "uz": "Komissiya",
+   "ru": "Комиссионные",
+   "en": "Commission",
+   "pnl_group": "revenue",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "grants": {
+   "uz": "Grant va subsidiyalar",
+   "ru": "Гранты и subsidiyalar",
+   "en": "Grants & subsidies",
+   "pnl_group": "other_income",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "donations": {
+   "uz": "Xayriya",
+   "ru": "Пожертвования",
+   "en": "Donations",
+   "pnl_group": "other_income",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "interest": {
+   "uz": "Foiz daromadi",
+   "ru": "Процентный доход",
+   "en": "Interest income",
+   "pnl_group": "finance_income",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "loan_in": {
+   "uz": "Kredit/qarz olindi",
+   "ru": "Полученный кредит/заём",
+   "en": "Loan received",
+   "pnl_group": null,
+   "cf_activity": "financing",
+   "balance_group": "loan_in"
+  },
+  "investment": {
+   "uz": "Investitsiya",
+   "ru": "Инвестиции",
+   "en": "Investment",
+   "pnl_group": null,
+   "cf_activity": "financing",
+   "balance_group": "equity_contribution"
+  },
+  "other_income": {
+   "uz": "Boshqa kirim",
+   "ru": "Прочие доходы",
+   "en": "Other income",
+   "pnl_group": "other_income",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "raw_materials": {
+   "uz": "Xom ashyo",
+   "ru": "Сырьё и материалы",
+   "en": "Raw materials",
+   "pnl_group": "cogs",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "packaging": {
+   "uz": "Qadoqlash",
+   "ru": "Упаковка",
+   "en": "Packaging",
+   "pnl_group": "cogs",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "goods_purchase": {
+   "uz": "Tovar xaridi",
+   "ru": "Закупка товаров",
+   "en": "Goods purchase",
+   "pnl_group": "cogs",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "salaries": {
+   "uz": "Xodimlar maoshi",
+   "ru": "Зарплата сотрудников",
+   "en": "Employee salaries",
+   "pnl_group": "opex",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "taxes": {
+   "uz": "Soliqlar",
+   "ru": "Налоги",
+   "en": "Taxes",
+   "pnl_group": "tax",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "social_tax": {
+   "uz": "Ijtimoiy to'lovlar",
+   "ru": "Социальные отчисления",
+   "en": "Social contributions",
+   "pnl_group": "opex",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "rent": {
+   "uz": "Ijara",
+   "ru": "Аренда",
+   "en": "Rent",
+   "pnl_group": "opex",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "utilities": {
+   "uz": "Kommunal xizmatlar",
+   "ru": "Коммунальные услуги",
+   "en": "Utilities",
+   "pnl_group": "opex",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "electricity": {
+   "uz": "Elektr energiyasi",
+   "ru": "Электроэнергия",
+   "en": "Electricity",
+   "pnl_group": "opex",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "equipment": {
+   "uz": "Uskuna va jihozlar",
+   "ru": "Оборудование",
+   "en": "Equipment",
+   "pnl_group": null,
+   "cf_activity": "investing",
+   "balance_group": "fixed_asset"
+  },
+  "maintenance": {
+   "uz": "Ta'mirlash va xizmat ko'rsatish",
+   "ru": "Ремонт и обслуживание",
+   "en": "Repairs & maintenance",
+   "pnl_group": "opex",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "transport": {
+   "uz": "Transport va logistika",
+   "ru": "Транспорт и логистика",
+   "en": "Transport & logistics",
+   "pnl_group": "opex",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "fuel": {
+   "uz": "Yoqilg'i",
+   "ru": "Топливо",
+   "en": "Fuel",
+   "pnl_group": "opex",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "marketing": {
+   "uz": "Marketing va reklama",
+   "ru": "Маркетинг и реклама",
+   "en": "Marketing & advertising",
+   "pnl_group": "opex",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "software": {
+   "uz": "Dasturlar va xosting",
+   "ru": "ПО и хостинг",
+   "en": "Software & hosting",
+   "pnl_group": "opex",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "office": {
+   "uz": "Ofis xarajatlari",
+   "ru": "Офисные расходы",
+   "en": "Office expenses",
+   "pnl_group": "opex",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "training": {
+   "uz": "O'qitish va kurslar",
+   "ru": "Обучение персонала",
+   "en": "Staff training",
+   "pnl_group": "opex",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "insurance": {
+   "uz": "Sug'urta",
+   "ru": "Страхование",
+   "en": "Insurance",
+   "pnl_group": "opex",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "loan_out": {
+   "uz": "Kredit to'lovi",
+   "ru": "Погашение кредита",
+   "en": "Loan repayment",
+   "pnl_group": null,
+   "cf_activity": "financing",
+   "balance_group": "loan_out"
+  },
+  "bank_fees": {
+   "uz": "Bank komissiyasi",
+   "ru": "Банковские комиссии",
+   "en": "Bank fees",
+   "pnl_group": "finance_cost",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "seeds_fertilizer": {
+   "uz": "Urug' va o'g'it",
+   "ru": "Семена и удобрения",
+   "en": "Seeds & fertilizer",
+   "pnl_group": "cogs",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "feed": {
+   "uz": "Chorva ozuqasi",
+   "ru": "Корм для скота",
+   "en": "Animal feed",
+   "pnl_group": "cogs",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "food_ingredients": {
+   "uz": "Oziq-ovqat mahsulotlari",
+   "ru": "Продукты питания",
+   "en": "Food ingredients",
+   "pnl_group": "cogs",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "subcontractors": {
+   "uz": "Pudratchilar",
+   "ru": "Подрядчики",
+   "en": "Subcontractors",
+   "pnl_group": "cogs",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "materials_build": {
+   "uz": "Qurilish materiallari",
+   "ru": "Строительные материалы",
+   "en": "Building materials",
+   "pnl_group": "cogs",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "teaching_materials": {
+   "uz": "O'quv materiallari",
+   "ru": "Учебные материалы",
+   "en": "Teaching materials",
+   "pnl_group": "cogs",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "licenses": {
+   "uz": "Litsenziya va ruxsatnomalar",
+   "ru": "Лицензии и разрешения",
+   "en": "Licenses & permits",
+   "pnl_group": "opex",
+   "cf_activity": "operating",
+   "balance_group": null
+  },
+  "owner_withdrawal": {
+   "uz": "Egasi olib qo'ygan pul",
+   "ru": "Изъятие владельцем",
+   "en": "Owner withdrawal",
+   "pnl_group": null,
+   "cf_activity": "financing",
+   "balance_group": "equity_withdrawal"
+  },
+  "other_expense": {
+   "uz": "Boshqa chiqim",
+   "ru": "Прочие расходы",
+   "en": "Other expense",
+   "pnl_group": "other_expense",
+   "cf_activity": "operating",
+   "balance_group": null
+  }
+ }
+}
