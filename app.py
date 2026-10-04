@@ -6,8 +6,8 @@ import sqlite3
 from datetime import datetime
 from flask import Flask, jsonify, request, g, send_from_directory
 
-app = Flask(__name__, static_folder="static", static_url_path="/static")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+app = Flask(__name__, static_folder=os.path.join(BASE_DIR, "static"), static_url_path="/static")
 DB = os.path.join(BASE_DIR, "moliya.db")
 TYPES_FILE = os.path.join(BASE_DIR, "static", "types.json")
 
@@ -91,8 +91,9 @@ def init():
 
 def rows(q, a=()): return [dict(r) for r in db().execute(q, a).fetchall()]
 
-@app.get("/")
-def index(): return send_from_directory("static", "index.html")
+@app.route("/")
+def index():
+    return send_from_directory(os.path.join(BASE_DIR, "static"), "index.html")
 
 @app.get("/api/companies")
 def companies(): return jsonify(rows("SELECT * FROM companies ORDER BY name"))
