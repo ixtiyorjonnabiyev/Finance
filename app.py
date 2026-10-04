@@ -7,8 +7,9 @@ from datetime import datetime
 from flask import Flask, jsonify, request, g, send_from_directory
 
 app = Flask(__name__, static_folder="static", static_url_path="/static")
-DB = "moliya.db"
-TYPES_FILE = os.path.join(os.path.dirname(__file__), "static", "types.json")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB = os.path.join(BASE_DIR, "moliya.db")
+TYPES_FILE = os.path.join(BASE_DIR, "static", "types.json")
 
 def load_cats_meta():
     try:
@@ -757,5 +758,9 @@ def report():
         valuation=valuation
     )
 
+init()
+
 if __name__ == "__main__":
-    init(); app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
+
