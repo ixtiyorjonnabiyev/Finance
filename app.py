@@ -12,11 +12,14 @@ DB = os.path.join(BASE_DIR, "moliya.db")
 TYPES_FILE = os.path.join(BASE_DIR, "static", "types.json")
 
 def load_cats_meta():
-    try:
-        with open(TYPES_FILE, "r", encoding="utf-8") as f:
-            return json.load(f).get("cats", {})
-    except Exception:
-        return {}
+    for p in [os.path.join(BASE_DIR, "types.json"), os.path.join(BASE_DIR, "static", "types.json")]:
+        if os.path.exists(p):
+            try:
+                with open(p, "r", encoding="utf-8") as f:
+                    return json.load(f).get("cats", {})
+            except Exception:
+                pass
+    return {}
 
 def get_last_day_of_month(year_int, month_int):
     return calendar.monthrange(year_int, month_int)[1]
@@ -93,7 +96,32 @@ def rows(q, a=()): return [dict(r) for r in db().execute(q, a).fetchall()]
 
 @app.route("/")
 def index():
-    return send_from_directory(os.path.join(BASE_DIR, "static"), "index.html")
+    if os.path.exists(os.path.join(BASE_DIR, "index.html")):
+        return send_from_directory(BASE_DIR, "index.html")
+    if os.path.exists(os.path.join(BASE_DIR, "static", "index.html")):
+        return send_from_directory(os.path.join(BASE_DIR, "static"), "index.html")
+    return "index.html not found", 404
+
+@app.route("/static/<path:filename>")
+def serve_static(filename):
+    if os.path.exists(os.path.join(BASE_DIR, "static", filename)):
+        return send_from_directory(os.path.join(BASE_DIR, "static"), filename)
+    if os.path.exists(os.path.join(BASE_DIR, filename)):
+        return send_from_directory(BASE_DIR, filename)
+    base_name = os.path.basename(filename)
+    if os.path.exists(os.path.join(BASE_DIR, base_name)):
+        return send_from_directory(BASE_DIR, base_name)
+    return "File not found", 404
+
+@app.route("/<path:filename>")
+def serve_root_file(filename):
+    if filename.startswith("api/"):
+        return jsonify(error="Not found"), 404
+    if os.path.exists(os.path.join(BASE_DIR, filename)):
+        return send_from_directory(BASE_DIR, filename)
+    if os.path.exists(os.path.join(BASE_DIR, "static", filename)):
+        return send_from_directory(os.path.join(BASE_DIR, "static"), filename)
+    return "File not found", 404
 
 @app.get("/api/companies")
 def companies(): return jsonify(rows("SELECT * FROM companies ORDER BY name"))
